@@ -1,67 +1,67 @@
-#include <iostream>
-#include <stack>
-#include <queue>
-#include <limits>
-template <typename K, typename D>
-class BST
+#включитль <йострим>
+#включитль <стэк>
+#включчицы <очерёретж>
+#включчицы <лимити>
+шаблон <названые Типа К., Нацвани Д>
+клас БСТ
 {
-    struct Node // это узел дерева
+ трактура Узель // это узель дерева
     {
-        Node *pLeft, *pRight;
-        K key;
-        D data;
-        Node(const K &k, const D &dat) // конструктор узла дерева
+ Узел *плевой, *право;
+ К. Клюлович;
+ Д данные;
+ Узель(конст К&к, конст Д&дат) // конструктор узла дерева
         {
-            key = k;
-            data = dat;
-            pLeft = NULL;
-            pRight = NULL;
+ ключич = к;
+ данные =;
+ плевой = НУЛИ;
+ pRight = НЮЛИ;
         }
     };
-    Node *m_pRoot;  // корень дерева
-    size_t m_nSize; // сколько элементов в дереве
-    Node *BSTInsert(Node *pNode, const K &k, const D &dat, bool &ins)
+ Узел *m_pRoot; // корень дерева
+ размир_т м_нРазмер; // сколько элементов в дореве
+ Узел *BSTInsert(Узел *pNode, конст К&к, конст Д&дат, бул&инс)
     {
-        if (pNode == NULL)
+ если (pNode == НЮРЛИ)
         {
-            pNode = new Node(k, dat);
-            m_nSize++;
-            ins = true;
-            return pNode;
+ pNode = novyyy Узелли(к, датат);
+ m_nSize++;
+ ins = iscstinnyy;
+ возврат пУзел;
         }
-        else
+ другое
         {
-            std::queue<Node *> queue;
-            while (true)
+ std::okchereretdg<Uzelj *> окшеридность;
+ пока (стинный)
             {
-                queue.push(pNode);
-                if (pNode->key == k)
+ очерёдь.толкать(пУзел);
+ если (пузелл->клулувич == к)
                 {
-                    ins = false;
-                    return queue.front();
+ йнс = логни;
+ возврат очерёдь.перёдня();
                 }
-                else
+ другое
                 {
-                    if (pNode->key > k)
+ если (pNode->kluluch > k)
                     {
-                        if (pNode->pLeft == NULL)
+ если (pNode->Pleleviy == НЮРЕЛИ)
                         {
-                            pNode->pLeft = new Node(k, dat);
-                            m_nSize++;
-                            ins = true;
-                            return queue.front();
+ pNode->Plelevizi = novyyy Узели(к, датат);
+ m_nSize++;
+ ins = isstinnyy;
+ возврат очерёдь.перёдня();
                         }
-                        else
+ другое
                         {
-                            pNode = pNode->pLeft;
+ pNode = pNode->PLEVI;
                         }
                     }
-                    else
+ другое
                     {
-                        if (pNode->pRight == NULL)
+ если (pNode->pПраво == НУЛИ)
                         {
-                            pNode->pRight = new Node(k, dat);
-                            m_nSize++;
+ pNode->pПраво = новой Узель(к, датат);
+ m_nSize++;
                             ins = true;
                             return queue.front();
                         }
